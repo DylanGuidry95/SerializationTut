@@ -11,8 +11,10 @@ using TeachingDeezKidz;
 
 namespace UserProfileApplication
 {
-    public partial class Form1 : SaveLoad<UserProfile>
+    public partial class Form1 : Form
     {
+        SaveLoad<UserProfile> _SaveLoad = new SaveLoad<UserProfile>();
+
         public Form1()
         {
             InitializeComponent();
@@ -32,8 +34,8 @@ namespace UserProfileApplication
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
-            currentUser = new UserProfile(Name.Text, Race.SelectedItem.ToString(), Gender.SelectedItem.ToString(), (int)Age.Value); //Creates the user
-            Serialize("UserInfo", currentUser); //Passes the currentUser's name as the name we want our file to be saved as and we pass the currentUser in so we can
+            currentUser = new UserProfile(UserName.Text, Race.SelectedItem.ToString(), Gender.SelectedItem.ToString(), (int)Age.Value); //Creates the user
+            _SaveLoad.Serialize("UserInfo", currentUser); //Passes the currentUser's name as the name we want our file to be saved as and we pass the currentUser in so we can
                                                       //add all of its serilizable data to the file
         }
 
@@ -46,8 +48,8 @@ namespace UserProfileApplication
         /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e)
         {
-            currentUser = Deserialize("UserInfo"); //Sets the current user equal to the value we retrived from the file we opened and read
-            Name.Text = currentUser.Name;
+            currentUser = _SaveLoad.Deserialize("UserInfo"); //Sets the current user equal to the value we retrived from the file we opened and read
+            UserName.Text = currentUser.Name;
             Race.Text = currentUser.Race;
             Age.Value = currentUser.Age;
             Gender.Text = currentUser.Gender;

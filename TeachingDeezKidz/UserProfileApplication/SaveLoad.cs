@@ -16,8 +16,10 @@ namespace UserProfileApplication
     /// Form class
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class SaveLoad<T> : Form
+    public class SaveLoad<T>
     {
+        public SaveLoad() { }
+
         /// <summary>
         /// Creates a file that we can populate with all the 
         /// serializable data inside of the Object we pass in for the 
@@ -32,7 +34,7 @@ namespace UserProfileApplication
         /// </summary>
         /// <param name="s">Name of the file</param>
         /// <param name="t">Data we are passing in to be serialized</param>
-        public static void Serialize(string s, T t)
+        public void Serialize(string s, T t)
         {
             using (FileStream fs = File.Create(@"..\..\SavedFiles\" + s + ".bin")) //Creates a FileStream using information from the file we created
             {
@@ -55,7 +57,7 @@ namespace UserProfileApplication
         /// </summary>
         /// <param name="s">Name of the file we are looking for</param>
         /// <returns></returns>
-        public static T Deserialize(string s)
+        public T Deserialize(string s)
         {
             T t; //We will use the as the return value
             using (FileStream fs = File.OpenRead(@"..\..\SavedFiles\"+ s + ".bin")) //Same process as Serialize but instead of create we use OpenRead

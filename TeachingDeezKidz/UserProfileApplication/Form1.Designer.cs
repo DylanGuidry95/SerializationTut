@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Name = new System.Windows.Forms.TextBox();
+            this.UserName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Gender = new System.Windows.Forms.ComboBox();
@@ -40,12 +40,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.Age)).BeginInit();
             this.SuspendLayout();
             // 
-            // Name
+            // UserName
             // 
-            this.Name.Location = new System.Drawing.Point(13, 41);
-            this.Name.Name = "Name";
-            this.Name.Size = new System.Drawing.Size(115, 20);
-            this.Name.TabIndex = 0;
+            this.UserName.Location = new System.Drawing.Point(13, 41);
+            this.UserName.Name = "Name";
+            this.UserName.Size = new System.Drawing.Size(115, 20);
+            this.UserName.TabIndex = 0;
             // 
             // label1
             // 
@@ -139,8 +139,9 @@
             this.Controls.Add(this.Gender);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Name);
+            this.Controls.Add(this.UserName);
             this.Text = "Form1";
+            //this.Name = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Age)).EndInit();
             this.ResumeLayout(false);
@@ -149,7 +150,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox Name;
+        private System.Windows.Forms.TextBox UserName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox Gender;
