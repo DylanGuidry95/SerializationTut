@@ -76,7 +76,6 @@
             this.Gender.Name = "Gender";
             this.Gender.Size = new System.Drawing.Size(63, 21);
             this.Gender.TabIndex = 3;
-            this.Gender.Text = "Select";
             // 
             // label3
             // 
@@ -100,7 +99,6 @@
             this.Race.Name = "Race";
             this.Race.Size = new System.Drawing.Size(63, 21);
             this.Race.TabIndex = 5;
-            this.Race.Text = "Select";
             // 
             // label4
             // 
@@ -143,10 +141,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Name);
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Age)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
