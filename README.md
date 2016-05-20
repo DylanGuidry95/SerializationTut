@@ -1,4 +1,4 @@
-# SerializationTut
+# Serialization Tutorial
 
 <b>Link to google document for breif overview of different methods of Serialization in C#</b><br>
   https://docs.google.com/document/d/18E_DuEadx9CqA7QfS-sqBsoGzCppzKbsxvHcEAzXkPY/edit?usp=sharing
